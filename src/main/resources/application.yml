@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      cookie:
+        http-only: true
+        secure: false
+        same-site: lax
+        name: HOPE_FITNESS_SESSION
+
+spring:
+  application:
+    name: hope-fitness-backend
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3307/hope_fitness_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+app:
+  initial-admin:
+    username: ${INITIAL_ADMIN_USERNAME:}
+    password: ${INITIAL_ADMIN_PASSWORD:}

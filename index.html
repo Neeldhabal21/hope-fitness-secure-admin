@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#060608">
+  <title>HOPE FITNESS — Premier Gym & Fitness Center Kharar</title>
+  <meta name="description" content="Transform your body at Hope Fitness Kharar. Modern strength equipment, cardio zone, personal training, and unmatched discipline. Join now!">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+<!-- Ambient Particle Canvas -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- Custom Cursor Elements -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- Top Progress Indicator -->
+<div class="progress" id="progress-bar"></div>
+
+<!-- Header Navigation -->
+<header class="nav" id="main-nav">
+  <a href="#home" class="brand" aria-label="Hope Fitness Home">
+    HOPE<span class="highlight">FITNESS</span>
+    <span class="brand-badge">KHARAR</span>
+  </a>
+
+  <nav class="nav-menu" id="nav-menu">
+    <a href="#about" class="nav-link">ABOUT</a>
+    <a href="#training" class="nav-link">PROGRAMS</a>
+    <a href="#gallery" class="nav-link">THE GYM</a>
+    <a href="#calculator" class="nav-link">BMI CALCULATOR</a>
+    <a href="#schedule" class="nav-link">SCHEDULE</a>
+    <a href="#membership" class="nav-link">MEMBERSHIP</a>
+  </nav>
+
+  <div class="nav-actions">
+    <button class="sound-toggle-btn" id="sound-toggle" aria-label="Toggle Sound Effects" title="Toggle UI Sound Effects">
+      <svg class="sound-icon sound-off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+      <svg class="sound-icon sound-on hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      </svg>
+    </button>
+    <button class="btn btn-red nav-cta" id="open-join-modal-nav">
+      <span>JOIN NOW</span>
+      <span class="btn-arrow">↗</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-grid-pattern"></div>
+    
+    <div class="hero-container">
+      <div class="hero-copy">
+        <div class="hero-top-tag">
+          <span class="status-dot"></span>
+          <span class="tag-text">OPEN TODAY • 5:00 AM - 10:00 PM • KHARAR, PUNJAB</span>
+        </div>
+        
+        <p class="hero-kicker">PREMIER STRENGTH & CONDITIONING FACILITY</p>
+        <h1 class="hero-headline">
+          BUILD <br>
+          <span class="hollow-text">YOUR</span> <br>
+          <span class="glow-text">BEAST.</span>
+        </h1>
+        
+        <p class="hero-sub">
+          Step into Kharar's highest-intensity training space. Equipped with heavy-iron, modern biomechanics, and zero-excuses culture.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-red btn-glow" id="open-join-modal-hero">
+            <span>START YOUR JOURNEY</span>
+            <span class="btn-arrow">↗</span>
+          </button>
+          <a href="#gallery" class="btn btn-glass">
+            <span>EXPLORE FLOOR</span>
+          </a>
+        </div>
+
+        <div class="hero-trust-badges">
+          <div class="trust-item">
+            <span class="trust-rating">4.7 ★★★★★</span>
+            <span class="trust-label">179+ Google Reviews</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-rating">10,000+ SQ FT</span>
+            <span class="trust-label">Heavy Iron Floor</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Card Stack Scene -->
+      <div class="hero-scene" id="hero-scene">
+        <div class="ambient-glow"></div>
+        <div class="scene-ring ring-1"></div>
+        <div class="scene-ring ring-2"></div>
+        
+        <div class="photo-card card-back tilt-element" data-depth="0.6">
+          <img src="https://gymdhundho.com/storage/hope-fitness-kharar5.webp" alt="Hope Fitness Cardio Zone" loading="eager">
+          <div class="card-tag">CARDIO & ENDURANCE</div>
+        </div>
+
+        <div class="photo-card card-mid tilt-element" data-depth="1.0">
+          <img src="https://gymdhundho.com/storage/hope-fitness-kharar7.webp" alt="Hope Fitness Equipment Floor" loading="eager">
+          <div class="card-tag">FREE WEIGHTS</div>
+        </div>
+
+        <div class="photo-card card-main tilt-element" data-depth="1.5">
+          <img src="https://gymdhundho.com/storage/hope-fitness-kharar.webp" alt="Hope Fitness Main Floor" loading="eager">
+          <div class="card-scanline"></div>
+          <div class="card-badge">
+            <span class="badge-icon">⚡</span>
+            <span>REAL GYM FLOOR</span>
+          </div>
+        </div>
+
+        <div class="floating-glass-card glass-one">
+          <span class="glass-num">50+</span>
+          <span class="glass-lbl">PRO MACHINES</span>
+        </div>
+
+        <div class="floating-glass-card glass-two">
+          <span class="glass-num">100%</span>
+          <span class="glass-lbl">REAL PROGRESS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-bottom-bar">
+      <span class="scroll-txt">SCROLL TO DISCOVER</span>
+      <div class="scroll-track">
+        <div class="scroll-thumb"></div>
+      </div>
+      <span class="section-idx">01 / 07</span>
+    </div>
+  </section>
+
+  <!-- Section 01: Mindset & Stats -->
+  <section id="about" class="statement-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">01 — THE MINDSET</span>
+        <h2 class="section-title">
+          DISCIPLINE <br>
+          CREATES <span class="text-gradient">RESULTS.</span>
+        </h2>
+      </div>
+
+      <div class="statement-grid">
+        <div class="statement-copy">
+          <p class="big-statement">
+            Hope Fitness Kharar is built for individuals who demand real strength, real environment, and real transformation.
+          </p>
+          <p class="statement-sub">
+            From precision hammer strength equipment to dumbbell stacks and dedicated cardio platforms — every square foot of our gym is engineered to unleash your inner drive.
+          </p>
+
+          <div class="features-list">
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div>
+                <strong>Bio-Mechanic Equipment</strong>
+                <p>Heavy duty machines calibrated for maximal hyper-trophy & isolation.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div>
+                <strong>Personalized Coaching</strong>
+                <p>Certified trainers dedicated to form, safety, and goal achievement.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">✓</div>
+              <div>
+                <strong>High-Vibe Atmosphere</strong>
+                <p>Surround yourself with members who show up, put in work, and level up.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Counter Grid -->
+        <div class="stats-card-container">
+          <div class="stats-glass-card">
+            <div class="stat-number-wrapper">
+              <span class="counter" data-target="4.7" data-decimals="1">0</span>
+              <span class="stat-unit">★</span>
+            </div>
+            <span class="stat-title">GOOGLE RATING</span>
+            <p class="stat-desc">Top rated gym facility in Kharar area</p>
+          </div>
+
+          <div class="stats-glass-card">
+            <div class="stat-number-wrapper">
+              <span class="counter" data-target="179">0</span>
+              <span class="stat-unit">+</span>
+            </div>
+            <span class="stat-title">VERIFIED REVIEWS</span>
+            <p class="stat-desc">Real stories from dedicated members</p>
+          </div>
+
+          <div class="stats-glass-card">
+            <div class="stat-number-wrapper">
+              <span class="counter" data-target="1000">0</span>
+              <span class="stat-unit">+</span>
+            </div>
+            <span class="stat-title">TRANSFORMATIONS</span>
+            <p class="stat-desc">Weight loss, muscle gain & athletic endurance</p>
+          </div>
+
+          <div class="stats-glass-card highlight-card">
+            <div class="stat-number-wrapper">
+              <span class="stat-infinity">∞</span>
+            </div>
+            <span class="stat-title">POTENTIAL</span>
+            <p class="stat-desc">Your strength journey starts with Rep #1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 02: Training Programs -->
+  <section id="training" class="training-section">
+    <div class="container">
+      <div class="section-header flex-header">
+        <div>
+          <span class="section-badge">02 — TRAINING PROGRAMS</span>
+          <h2 class="section-title">
+            CHOOSE YOUR <span class="text-gradient">MODE.</span>
+          </h2>
+        </div>
+        <p class="header-desc">
+          Tailored methodologies for every goal. Select a program to view details.
+        </p>
+      </div>
+
+      <div class="training-accordion">
+        <article class="program-card active" data-program="strength">
+          <div class="program-header">
+            <span class="program-num">01</span>
+            <h3 class="program-title">STRENGTH & POWER</h3>
+            <span class="program-tag">HEAVY IRON</span>
+            <button class="program-expand-btn" aria-label="Toggle details">↗</button>
+          </div>
+          <div class="program-body">
+            <p>Free weights, squat racks, deadlift platforms, and heavy dumbbell stations engineered to build dense athletic strength.</p>
+            <div class="program-features">
+              <span>• Powerlifting Racks</span>
+              <span>• Olympic Plates</span>
+              <span>• Progressive Overload</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="program-card" data-program="muscle">
+          <div class="program-header">
+            <span class="program-num">02</span>
+            <h3 class="program-title">HYPERTROPHY & BODYBUILDING</h3>
+            <span class="program-tag">MUSCLE SCULPT</span>
+            <button class="program-expand-btn" aria-label="Toggle details">↗</button>
+          </div>
+          <div class="program-body">
+            <p>Targeted cable towers, pin-loaded & plate-loaded leverage machines for absolute muscular isolation and hyper-trophy.</p>
+            <div class="program-features">
+              <span>• Cable Stations</span>
+              <span>• Isolated Benches</span>
+              <span>• Time Under Tension</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="program-card" data-program="conditioning">
+          <div class="program-header">
+            <span class="program-num">03</span>
+            <h3 class="program-title">CARDIO & HI-INTENSITY</h3>
+            <span class="program-tag">ENDURANCE</span>
+            <button class="program-expand-btn" aria-label="Toggle details">↗</button>
+          </div>
+          <div class="program-body">
+            <p>Commercial treadmills, elliptical trainers, spin bikes, and rowers for rapid cardiovascular conditioning & fat loss.</p>
+            <div class="program-features">
+              <span>• Heart Rate Monitoring</span>
+              <span>• Calorie Torchers</span>
+              <span>• Stamina Building</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="program-card" data-program="guidance">
+          <div class="program-header">
+            <span class="program-num">04</span>
+            <h3 class="program-title">PERSONAL COACHING</h3>
+            <span class="program-tag">1-ON-1 GUIDANCE</span>
+            <button class="program-expand-btn" aria-label="Toggle details">↗</button>
+          </div>
+          <div class="program-body">
+            <p>Customized nutrition strategies, posture correction, form audits, and daily accountability from certified coaches.</p>
+            <div class="program-features">
+              <span>• Customized Macro Plans</span>
+              <span>• Form Correction</span>
+              <span>• 1-on-1 Mentorship</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 03: The Gym Gallery with Interactive Lightbox & Category Filters -->
+  <section id="gallery" class="gallery-section">
+    <div class="container">
+      <div class="section-header flex-header">
+        <div>
+          <span class="section-badge">03 — FACILITY TOUR</span>
+          <h2 class="section-title">
+            INSIDE <span class="text-gradient">HOPE FITNESS.</span>
+          </h2>
+        </div>
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">ALL ZONES</button>
+          <button class="filter-btn" data-filter="strength">STRENGTH FLOOR</button>
+          <button class="filter-btn" data-filter="cardio">CARDIO & MACHINES</button>
+        </div>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <div class="gallery-card size-large" data-category="strength">
+          <img src="https://gymdhundho.com/storage/hope-fitness-kharar.webp" alt="Main Heavy Lifting Floor Hope Fitness" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-cat">STRENGTH ZONE</span>
+            <h4>MAIN LIFTING ARENA</h4>
+            <p>Spacious floor with high-end resistance rigs and benches.</p>
+            <button class="gallery-zoom-btn" data-src="https://gymdhundho.com/storage/hope-fitness-kharar.webp" data-caption="Main Lifting Arena — Hope Fitness Kharar">🔍 VIEW FULLSCREEN</button>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-category="strength">
+          <img src="https://gymdhundho.com/storage/hope-fitness-kharar6.webp" alt="Plate Loaded Machines" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-cat">BIOMECHANICS</span>
+            <h4>PLATE-LOADED MACHINES</h4>
+            <p>Ergonomic chest, back, and leg pressure machines.</p>
+            <button class="gallery-zoom-btn" data-src="https://gymdhundho.com/storage/hope-fitness-kharar6.webp" data-caption="Plate-Loaded Biomechanics Zone">🔍 VIEW FULLSCREEN</button>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-category="cardio">
+          <img src="https://gymdhundho.com/storage/hope-fitness-kharar4.webp" alt="Cardio Treadmills Deck" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-cat">CARDIO DECK</span>
+            <h4>COMMERCIAL TREADMILLS</h4>
+            <p>Shock-absorption treadmills with real-time stat monitors.</p>
+            <button class="gallery-zoom-btn" data-src="https://gymdhundho.com/storage/hope-fitness-kharar4.webp" data-caption="Commercial Treadmill Row">🔍 VIEW FULLSCREEN</button>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-category="strength">
+          <img src="https://gymdhundho.com/storage/hope-fitness-kharar2.webp" alt="Dumbbell Rack & Benches" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-cat">FREE WEIGHTS</span>
+            <h4>HEAVY DUMBBELL RACK</h4>
+            <p>Precision rubberized dumbbell sets up to heavy weight capacity.</p>
+            <button class="gallery-zoom-btn" data-src="https://gymdhundho.com/storage/hope-fitness-kharar2.webp" data-caption="Free Weight Dumbbell Rack">🔍 VIEW FULLSCREEN</button>
+          </div>
+        </div>
+
+        <div class="gallery-card" data-category="strength">
+          <img src="https://gymdhundho.com/storage/hope-fitness-kharar3.webp" alt="Cable Crossover Rig" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-cat">CABLE STATIONS</span>
+            <h4>MULTI-STATION RIG</h4>
+            <p>Dual pulley system for upper body isolation.</p>
+            <button class="gallery-zoom-btn" data-src="https://gymdhundho.com/storage/hope-fitness-kharar3.webp" data-caption="Multi-Station Cable Crossover Rig">🔍 VIEW FULLSCREEN</button>
+          </div>
+        </div>
+
+        <div class="gallery-card size-wide" data-category="cardio">
+          <img src="https://gymdhundho.com/storage/hope-fitness-kharar5.webp" alt="Full Gym Floor Overview" loading="lazy">
+          <div class="gallery-overlay">
+            <span class="gallery-cat">OVERVIEW</span>
+            <h4>FULL FACILITY FLOOR</h4>
+            <p>Air-conditioned, clean, dynamic sound atmosphere for top performance.</p>
+            <button class="gallery-zoom-btn" data-src="https://gymdhundho.com/storage/hope-fitness-kharar5.webp" data-caption="Full Gym Floor Aerial Overview">🔍 VIEW FULLSCREEN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 04: Interactive BMI & Calorie Calculator -->
+  <section id="calculator" class="calculator-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">04 — INTERACTIVE TOOLS</span>
+        <h2 class="section-title">
+          BMI & FITNESS <span class="text-gradient">CALCULATOR.</span>
+        </h2>
+        <p class="section-sub-center">Calculate your body mass index and personalized recommended daily calories.</p>
+      </div>
+
+      <div class="calculator-wrapper">
+        <div class="calc-form">
+          <div class="calc-row">
+            <div class="input-group">
+              <label for="calc-gender">GENDER</label>
+              <select id="calc-gender" class="calc-input">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="calc-age">AGE (YEARS)</label>
+              <input type="number" id="calc-age" class="calc-input" value="25" min="12" max="90">
+            </div>
+          </div>
+
+          <div class="calc-row">
+            <div class="input-group">
+              <label for="calc-height">HEIGHT (CM): <span id="height-val">175</span> cm</label>
+              <input type="range" id="calc-height" class="calc-range" min="130" max="210" value="175">
+            </div>
+            <div class="input-group">
+              <label for="calc-weight">WEIGHT (KG): <span id="weight-val">72</span> kg</label>
+              <input type="range" id="calc-weight" class="calc-range" min="40" max="150" value="72">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="calc-goal">PRIMARY GOAL</label>
+            <select id="calc-goal" class="calc-input">
+              <option value="muscle">Build Lean Muscle (+300 kcal)</option>
+              <option value="fatloss">Fat Loss & Shredding (-400 kcal)</option>
+              <option value="maintain">Maintain & Build Strength</option>
+            </select>
+          </div>
+
+          <button id="btn-calculate" class="btn btn-red btn-full">
+            <span>CALCULATE MY METRICS</span>
+            <span>⚡</span>
+          </button>
+        </div>
+
+        <div class="calc-results" id="calc-results">
+          <div class="bmi-gauge">
+            <span class="gauge-label">YOUR BMI SCORE</span>
+            <div class="bmi-score" id="res-bmi">23.5</div>
+            <span class="bmi-category" id="res-category">NORMAL WEIGHT</span>
+          </div>
+
+          <div class="calorie-box">
+            <span class="cal-title">ESTIMATED DAILY CALORIES</span>
+            <div class="cal-number" id="res-calories">2,450 <span>kcal/day</span></div>
+            <p class="cal-tip" id="res-tip">Ideal intake to support muscle synthesis and recovery.</p>
+          </div>
+
+          <div class="recommended-plan">
+            <span class="rec-lbl">RECOMMENDED HOPE FITNESS PROGRAM:</span>
+            <strong id="res-program">STRENGTH & HYPERTROPHY MODE</strong>
+            <button class="btn btn-glass btn-sm" id="btn-claim-plan">
+              <span>GET FREE CONSULTATION</span> ↗
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 05: Class & Training Timetable -->
+  <section id="schedule" class="schedule-section">
+    <div class="container">
+      <div class="section-header flex-header">
+        <div>
+          <span class="section-badge">05 — WEEKLY TIMETABLE</span>
+          <h2 class="section-title">
+            WORKOUT <span class="text-gradient">SCHEDULE.</span>
+          </h2>
+        </div>
+        <div class="schedule-tabs" id="schedule-tabs">
+          <button class="tab-btn active" data-day="mon">MON</button>
+          <button class="tab-btn" data-day="tue">TUE</button>
+          <button class="tab-btn" data-day="wed">WED</button>
+          <button class="tab-btn" data-day="thu">THU</button>
+          <button class="tab-btn" data-day="fri">FRI</button>
+          <button class="tab-btn" data-day="sat">SAT</button>
+        </div>
+      </div>
+
+      <div class="schedule-content" id="schedule-content">
+        <!-- Will be populated dynamically via JS based on selected day -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 06: Membership & Pricing -->
+  <section id="membership" class="membership-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">06 — MEMBERSHIP PLANS</span>
+        <h2 class="section-title">
+          INVEST IN <span class="text-gradient">YOURSELF.</span>
+        </h2>
+        <p class="section-sub-center">Transparent pricing. No hidden fees. Choose your commitment level.</p>
+
+        <!-- Billing Switcher -->
+        <div class="billing-toggle-container">
+          <span class="toggle-lbl active" id="lbl-monthly">Monthly</span>
+          <button class="billing-toggle" id="billing-toggle" aria-label="Toggle Billing Frequency">
+            <span class="toggle-knob"></span>
+          </button>
+          <span class="toggle-lbl" id="lbl-quarterly">Quarterly <span class="save-badge">SAVE 20%</span></span>
+        </div>
+      </div>
+
+      <div class="membership-cards-grid">
+        <!-- Starter Plan -->
+        <div class="membership-card">
+          <div class="card-tier-badge">BASIC</div>
+          <h3>DAY & TRIAL PASS</h3>
+          <p class="tier-desc">Perfect for visitors & workout spot testing.</p>
+          <div class="plan-price">
+            <span class="currency">₹</span>
+            <span class="amount" data-monthly="300" data-quarterly="300">300</span>
+            <span class="period">/ session</span>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Full Gym Floor Access</li>
+            <li>✓ Locker Room & Shower</li>
+            <li>✓ Equipment Guidance</li>
+            <li class="disabled">✗ Personal Diet Chart</li>
+            <li class="disabled">✗ Personal Trainer Session</li>
+          </ul>
+          <button class="btn btn-glass btn-full open-join-modal-plan" data-plan="Day Pass">BOOK TRIAL</button>
+        </div>
+
+        <!-- Popular Plan -->
+        <div class="membership-card featured-plan">
+          <div class="popular-ribbon">MOST POPULAR</div>
+          <div class="card-tier-badge red-badge">BEAST MODE</div>
+          <h3>STANDARD GYM MEMBERSHIP</h3>
+          <p class="tier-desc">Complete access to all strength & cardio equipment.</p>
+          <div class="plan-price">
+            <span class="currency">₹</span>
+            <span class="amount" data-monthly="1,600" data-quarterly="4,200">1,600</span>
+            <span class="period" id="price-period-1">/ month*</span>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Unlimited Gym Floor Access</li>
+            <li>✓ Strength, Free Weights & Cardio Zone</li>
+            <li>✓ Locker Room & Hot Shower Access</li>
+            <li>✓ Initial Body Composition Audit</li>
+            <li>✓ General Trainer Guidance</li>
+          </ul>
+          <button class="btn btn-red btn-full btn-glow open-join-modal-plan" data-plan="Standard Membership">ENQUIRE & JOIN NOW ↗</button>
+        </div>
+
+        <!-- VIP Plan -->
+        <div class="membership-card">
+          <div class="card-tier-badge gold-badge">VIP ELITE</div>
+          <h3>PERSONAL COACHING PACK</h3>
+          <p class="tier-desc">For maximum transformation velocity with dedicated 1-on-1 coach.</p>
+          <div class="plan-price">
+            <span class="currency">₹</span>
+            <span class="amount" data-monthly="5,000" data-quarterly="13,500">5,000</span>
+            <span class="period" id="price-period-2">/ month</span>
+          </div>
+          <ul class="plan-features">
+            <li>✓ Everything in Standard Membership</li>
+            <li>✓ Dedicated 1-on-1 Certified Personal Trainer</li>
+            <li>✓ Custom Workout & Nutrition Macro Plan</li>
+            <li>✓ Weekly Progress Audits & Body Metrics</li>
+            <li>✓ Priority Locker & Towel Service</li>
+          </ul>
+          <button class="btn btn-glass btn-full open-join-modal-plan" data-plan="VIP Personal Coaching">GET VIP ACCESS</button>
+        </div>
+      </div>
+
+      <p class="pricing-disclaimer">*Listed prices based on public floor rates. Contact Hope Fitness for seasonal promotional offers.</p>
+    </div>
+  </section>
+
+  <!-- Section 07: Reviews Marquee -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">07 — MEMBER PROOF</span>
+        <h2 class="section-title">
+          WHAT OUR MEMBERS <span class="text-gradient">SAY.</span>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Scrolling Marquee -->
+    <div class="marquee-wrapper">
+      <div class="marquee-track">
+        <div class="review-pill">
+          <span class="stars">★★★★★</span>
+          <p>"Best gym in Kharar! Equipment is brand new and trainers are very helpful."</p>
+          <strong>— Rahul Sharma</strong>
+        </div>
+        <div class="review-pill">
+          <span class="stars">★★★★★</span>
+          <p>"Great environment for heavy lifting. Clean space, good music, high vibe."</p>
+          <strong>— Amanpreet Singh</strong>
+        </div>
+        <div class="review-pill">
+          <span class="stars">★★★★★</span>
+          <p>"Joined 3 months ago and lost 8kg! The personal coaching here is top notch."</p>
+          <strong>— Priya Verma</strong>
+        </div>
+        <div class="review-pill">
+          <span class="stars">★★★★★</span>
+          <p>"Spacious floor, good quality machines, open early in the morning!"</p>
+          <strong>— Vikramjit Gill</strong>
+        </div>
+
+        <!-- Duplicated for continuous marquee -->
+        <div class="review-pill">
+          <span class="stars">★★★★★</span>
+          <p>"Best gym in Kharar! Equipment is brand new and trainers are very helpful."</p>
+          <strong>— Rahul Sharma</strong>
+        </div>
+        <div class="review-pill">
+          <span class="stars">★★★★★</span>
+          <p>"Great environment for heavy lifting. Clean space, good music, high vibe."</p>
+          <strong>— Amanpreet Singh</strong>
+        </div>
+        <div class="review-pill">
+          <span class="stars">★★★★★</span>
+          <p>"Joined 3 months ago and lost 8kg! The personal coaching here is top notch."</p>
+          <strong>— Priya Verma</strong>
+        </div>
+        <div class="review-pill">
+          <span class="stars">★★★★★</span>
+          <p>"Spacious floor, good quality machines, open early in the morning!"</p>
+          <strong>— Vikramjit Gill</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-bg-glow"></div>
+    <div class="container text-center">
+      <span class="section-badge">YOUR NEXT REP STARTS HERE</span>
+      <h2 class="contact-headline">
+        STOP WAITING.<br>
+        <span class="text-gradient">START BUILDING.</span>
+      </h2>
+      <p class="contact-address">
+        📍 SCO-3, Near Toll Plaza, Bhago Majra, Kharar, Punjab 140301
+      </p>
+
+      <div class="contact-actions">
+        <a href="https://wa.me/919988350560?text=Hi%20Hope%20Fitness!%20I%20am%20interested%20in%20joining%20the%20gym." target="_blank" rel="noopener" class="btn btn-red btn-lg btn-glow">
+          <span>CHAT ON WHATSAPP</span> ↗
+        </a>
+        <a href="tel:+919988350560" class="btn btn-glass btn-lg">
+          <span>CALL 099883 50560</span>
+        </a>
+      </div>
+
+      <div class="location-box">
+        <div class="loc-item">
+          <strong>HOURS</strong>
+          <p>Mon - Sat: 5:00 AM - 10:00 PM<br>Sunday: 6:00 AM - 12:00 PM</p>
+        </div>
+        <div class="loc-item">
+          <strong>LOCATION</strong>
+          <p>Near Toll Plaza, Kharar, Punjab</p>
+        </div>
+        <div class="loc-item">
+          <strong>CONTACT</strong>
+          <p>+91 99883 50560</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-brand">
+      <a href="#home" class="brand">HOPE<span class="highlight">FITNESS</span></a>
+      <p>© 2026 HOPE FITNESS KHARAR • PREMIER GYM CONCEPT</p>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#training">Programs</a>
+      <a href="#gallery">Floor</a>
+      <a href="#membership">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="back-to-top" id="back-to-top" aria-label="Back to Top">
+      <span>TOP ↑</span>
+    </button>
+  </div>
+</footer>
+
+<!-- Lightbox Modal for Gallery Images -->
+<div class="modal-backdrop" id="image-modal">
+  <div class="modal-container">
+    <button class="modal-close" id="modal-close">×</button>
+    <img id="modal-img" src="" alt="Full view Hope Fitness">
+    <p id="modal-caption" class="modal-caption"></p>
+  </div>
+</div>
+
+<!-- Quick Join / Enquiry Modal Form -->
+<div class="modal-backdrop" id="join-modal">
+  <div class="modal-container form-modal-container">
+    <button class="modal-close" id="join-modal-close">×</button>
+    <div class="modal-header text-center">
+      <h3>CLAIM YOUR <span class="text-gradient">FREE TRIAL</span></h3>
+      <p>Fill out the quick form below and our head coach will call you back within 15 minutes.</p>
+    </div>
+
+    <form id="join-form" class="modal-form">
+      <div class="form-group">
+        <label for="form-name">FULL NAME</label>
+        <input type="text" id="form-name" placeholder="e.g. Rahul Sharma" required class="modal-input">
+      </div>
+      <div class="form-group">
+        <label for="form-phone">PHONE NUMBER</label>
+        <input type="tel" id="form-phone" placeholder="e.g. 99883 50560" required class="modal-input">
+      </div>
+      <div class="form-group">
+        <label for="form-plan">SELECTED PLAN / GOAL</label>
+        <select id="form-plan" class="modal-input">
+          <option value="Free Trial Session">1-Day Free Trial Session</option>
+          <option value="Standard Membership">Standard Gym Membership</option>
+          <option value="VIP Personal Coaching">VIP Personal Coaching Pack</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-red btn-full btn-glow">
+        <span>CONFIRM MY BOOKING</span> ↗
+      </button>
+    </form>
+    
+    <div class="form-success-msg hidden" id="form-success">
+      <span class="success-icon">🎉</span>
+      <h4>YOU'RE ALL SET!</h4>
+      <p>Thank you! Your inquiry is being sent directly to Hope Fitness WhatsApp. We'll contact you shortly.</p>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
