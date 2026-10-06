@@ -565,7 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (joinModal) joinModal.addEventListener('click', (e) => { if (e.target === joinModal) joinModal.classList.remove('active'); });
 
   async function submitLead(payload) {
-    const response = await fetch('/api/leads', {
+    const response = await fetch('https://hope-fitness-secure-admin.onrender.com/api/leads', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
