@@ -93,10 +93,11 @@ public class SecurityConfig {
 
         http
             .cors(c -> {})
-            .csrf(c -> c
-                .csrfTokenRepository(csrf)
-                .csrfTokenRequestHandler(handler)
-            )
+         .csrf(c -> c
+    .csrfTokenRepository(csrf)
+    .csrfTokenRequestHandler(handler)
+    .ignoringRequestMatchers("/api/leads")
+)
 
             .sessionManagement(s ->
                 s.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
