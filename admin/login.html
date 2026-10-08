@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hope Fitness — Admin Login</title>
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin-shell">
+  <main class="login-wrap">
+    <section class="login-card">
+      <div class="eyebrow">HOPE FITNESS · KHARAR</div>
+      <h1>ADMIN <span>CONTROL</span></h1>
+      <p class="muted">Private staff dashboard. Authorized access only.</p>
+      <form id="login-form">
+        <label>USERNAME<input id="username" autocomplete="username" required></label>
+        <label>PASSWORD<input id="password" type="password" autocomplete="current-password" required></label>
+        <button type="submit" id="login-btn">SIGN IN <span>↗</span></button>
+        <p id="error" class="error" role="alert"></p>
+      </form>
+      <a class="back" href="/">← Back to website</a>
+    </section>
+  </main>
+  <script src="/admin/login.js"></script>
+</body>
+</html>

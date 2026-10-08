@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hope Fitness — Admin Dashboard</title>
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body class="admin-app">
+  <aside class="sidebar">
+    <a href="/" class="logo">HOPE<span>FITNESS</span><small>ADMIN</small></a>
+    <nav><a class="active" href="#">Dashboard</a><a href="#leads">Leads</a><a href="#settings">Settings</a></nav>
+    <button id="logout" class="logout">LOG OUT</button>
+  </aside>
+  <main class="dashboard">
+    <header class="topbar"><div><div class="eyebrow">PRIVATE CONTROL CENTER</div><h1>Good work. Let's convert leads.</h1></div><div id="admin-name" class="user-pill">ADMIN</div></header>
+    <section class="stats" id="stats"><div><span>TOTAL</span><strong id="stat-total">—</strong></div><div><span>NEW</span><strong id="stat-new">—</strong></div><div><span>CONTACTED</span><strong id="stat-contacted">—</strong></div><div><span>CONVERTED</span><strong id="stat-converted">—</strong></div><div><span>TODAY</span><strong id="stat-today">—</strong></div></section>
+    <section class="panel" id="leads">
+      <div class="panel-head"><div><div class="eyebrow">LEAD PIPELINE</div><h2>Website enquiries</h2></div><div class="toolbar"><input id="search" placeholder="Search name, phone or email"><button id="refresh">REFRESH</button></div></div>
+      <div class="table-wrap"><table><thead><tr><th>Lead</th><th>Contact</th><th>Plan</th><th>Status</th><th>Received</th><th></th></tr></thead><tbody id="lead-body"></tbody></table></div>
+      <div class="pager"><button id="prev">←</button><span id="page-info">Page 1</span><button id="next">→</button></div>
+    </section>
+    <p id="toast" class="toast"></p>
+  </main>
+  <script src="/admin/dashboard.js"></script>
+</body>
+</html>
